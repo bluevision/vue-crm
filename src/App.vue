@@ -8,7 +8,7 @@
         :key="`${link.label}-header-link`"
         text
         rounded
-        to="link.url"
+        :to="link.url"
         >{{ link.label }}</v-btn
       >
     </v-app-bar>
@@ -39,11 +39,15 @@ export default {
   name: "App",
 
   components: {},
-
+  computed: {
+    todos() {
+      return this.$store.state.todos
+    }
+  },
   data: () => ({
     links: [
       {
-        label: "Home",
+        label: "Contacts",
         url: "/"
       },
       {
