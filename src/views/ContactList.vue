@@ -17,7 +17,7 @@
           :key="i"
         >
           <v-list-item-content>
-            <v-list-item-title v-text="contact.firstName"></v-list-item-title>
+          <ContactModal :firstName="contact.firstName" :lastName="contact.lastName">{{contact.firstName + ' ' + contact.lastName}}</ContactModal>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import ContactModal from '@/components/ContactModal.vue';
+
 import contacts from './contacts.json'
 export default {
 data() {
@@ -34,7 +36,10 @@ data() {
 methods: {
   addContact() {
     alert('Hello')
+  },
+},
+  components: {
+    ContactModal,
   }
-}
 }
 </script>
