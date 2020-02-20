@@ -16,9 +16,11 @@
           v-for="(contact, i) in contacts"
           :key="i"
         >
-          <v-list-item-content>
-          <ContactModal :firstName="contact.firstName" :lastName="contact.lastName">{{contact.firstName + ' ' + contact.lastName}}</ContactModal>
-          </v-list-item-content>
+                <template v-slot:activator="{ on }">
+        <v-list-item-content dark v-on="on">{{firstName + ' ' + lastName}}</v-list-item-content>
+      </template>
+          <ContactModal :firstName="contact.firstName" :lastName="contact.lastName" />
+          
         </v-list-item>
       </v-list-item-group>
     </v-list>

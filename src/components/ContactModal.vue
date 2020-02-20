@@ -1,7 +1,7 @@
 <template><v-row justify="center">
     <v-dialog v-model="dialog" persistent max-width="290">
       <template v-slot:activator="{ on }">
-        <v-btn color="primary" dark v-on="on"><slot></slot></v-btn>
+        <v-list-item-content dark v-on="on">{{firstName + ' ' + lastName}}</v-list-item-content>
       </template>
       <v-card> 
         <v-card-title class="headline">{{firstName + ' ' + lastName}}</v-card-title>
