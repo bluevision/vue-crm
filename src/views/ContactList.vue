@@ -19,18 +19,19 @@
                 <template v-slot:activator="{ on }">
         <v-list-item-content dark v-on="on">{{firstName + ' ' + lastName}}</v-list-item-content>
       </template>
-          <ContactModal :firstName="contact.firstName" :lastName="contact.lastName" />
+          <Contact :firstName="contact.firstName" :lastName="contact.lastName" />
           
         </v-list-item>
       </v-list-item-group>
     </v-list>
+    <div><router-view/></div>
   </v-card>
 </template>
 
 <script>
-import ContactModal from '@/components/ContactModal.vue';
+import Contact from './Contact.vue';
+import axios from 'axios';
 
-import contacts from './contacts.json'
 export default {
 data() {
       return {contacts: contacts}
@@ -41,7 +42,17 @@ methods: {
   },
 },
   components: {
-    ContactModal,
+    Contact,
+  },
+  created() {
+    axios
+    .get('http://localhost:3000/contacts')
+    .then(response => {
+      console.log(response.data)
+    })
+    .catch(error => {
+      console.log('error' + error.response)
+    })
   }
 }
 </script>

@@ -5,7 +5,7 @@
       </template>
       <v-card> 
         <v-card-title class="headline">{{firstName + ' ' + lastName}}</v-card-title>
-        <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
+        <textarea :value="firstName" relative bg-transparent px-2 border mt-2 h-64 border-none leading-normal/>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="green darken-1" text @click="dialog = false">Disagree</v-btn>
