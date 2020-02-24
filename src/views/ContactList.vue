@@ -11,7 +11,7 @@
       <v-icon slot="prepend" @click="addContact">mdi-plus-circle</v-icon>
       </v-text-field>
       </v-subheader>
-      <v-list-item-group v-model="item" color="primary">
+    <v-list-item-group v-model="item" color="primary">
         <v-list-item
           v-for="(contact, i) in contacts"
           :key="i"
@@ -29,12 +29,12 @@
 </template>
 
 <script>
+import ContactService from '@/services/ContactService.js'
 import Contact from './Contact.vue';
-import axios from 'axios';
 
 export default {
 data() {
-      return {contacts: contacts}
+      return {contacts: []}
   },
 methods: {
   addContact() {
@@ -42,13 +42,12 @@ methods: {
   },
 },
   components: {
-    Contact,
+   Contact,
   },
   created() {
-    axios
-    .get('http://localhost:3000/contacts')
+    ContactService.getContacts()
     .then(response => {
-      console.log(response.data)
+      this.contacts = response.data
     })
     .catch(error => {
       console.log('error' + error.response)
