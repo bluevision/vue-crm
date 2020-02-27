@@ -19,7 +19,7 @@
                 <template v-slot:activator="{ on }">
         <v-list-item-content dark v-on="on">{{firstName + ' ' + lastName}}</v-list-item-content>
       </template>
-          <ContactModal :firstName="contact.firstName" :lastName="contact.lastName" />
+          <Contact :firstName="contact.firstName" :lastName="contact.lastName" />
           
         </v-list-item>
       </v-list-item-group>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import ContactModal from '@/components/ContactModal.vue';
+import Contact from './views/Contact.vue';
 
 import contacts from './contacts.json'
 export default {
@@ -41,7 +41,7 @@ methods: {
   },
 },
   components: {
-    ContactModal,
+    Contact,
   }
 }
 </script>
