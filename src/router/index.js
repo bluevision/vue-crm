@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import ContactList from "../views/ContactList.vue";
 import Contact from '../views/Contact.vue';
+import AddContact from '../views/AddContact.vue';
 
 
 Vue.use(VueRouter);
@@ -17,6 +18,12 @@ const routes = [
     path: '/contact/:id',
     name: 'Contact',
     component: Contact,
+    props: true
+  },
+  {
+    path: '/addcontact',
+    name: 'AddContact',
+    component: AddContact,
     props: true
   },
   {

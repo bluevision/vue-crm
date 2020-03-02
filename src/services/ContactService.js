@@ -15,5 +15,8 @@ export default {
     },
     getContact(id) {
         return apiClient.get('/contacts/' + id)
+    },
+    postContact(contact) {
+        return apiClient.post('/contacts', contact)
     }
 }

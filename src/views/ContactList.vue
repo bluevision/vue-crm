@@ -8,7 +8,7 @@
       <v-subheader>
         <v-text-field>
         <v-icon slot="append">mdi-magnify</v-icon>
-      <v-icon slot="prepend">mdi-plus-circle</v-icon>
+      <router-link :to="{name: 'AddContact'}"> <v-icon slot="prepend">mdi-plus-circle</v-icon></router-link>
       </v-text-field>
       </v-subheader>
     <v-list-item-group v-model="item" color="primary">
