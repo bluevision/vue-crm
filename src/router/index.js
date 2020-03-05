@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import ContactList from "../views/ContactList.vue";
 import Contact from '../views/Contact.vue';
 import AddContact from '../views/AddContact.vue';
 

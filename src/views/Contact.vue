@@ -1,30 +1,31 @@
-<template>
-<div class="event-header">
-  <h3>Full Name: {{contact.firstName + ' ' + contact.lastName}}</h3>
-  <h5>Email: {{contact.email}}</h5>
-  </div>
-</template>
+<template><v-row justify="center">
+    <v-dialog v-model="dialog" persistent max-width="290">
+      <template v-slot:activator="{ on }">
+        <v-list-item-content dark v-on="on">{{firstName + ' ' + lastName}}</v-list-item-content>
+      </template>
+      <v-card> 
+        <v-card-title class="headline">{{firstName + ' ' + lastName}}</v-card-title>
+        <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="green darken-1" text @click="dialog = false">Disagree</v-btn>
+          <v-btn color="green darken-1" text @click="dialog = false">Agree</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-row>
+  </template>
 
   <script>
-
-  import ContactService from '@/services/ContactService.js'
-
   export default {
-    props: ['id'],
     data () {
       return {
-        contact: {}
+        dialog: false,
       }
     },
-    created() {
-      ContactService.getContact(this.id)
-        .then(response => {
-          this.contact = response.data
-      
-        })
-        .catch(error => {
-          console.log('error' + error.response)
-        })
-    }
+        props: {
+          firstName: String,
+          lastName: String
+      }
   }
 </script>
