@@ -1,63 +1,68 @@
 <template>
+<v-container>
+  <v-row align="center" justify="center">
     <div>
         <h1>Add a Contact</h1>
-         <v-form v-model="valid" @submit.prevent="addContact">
-    <v-container>
-      <v-row>
-        <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="firstname"
-            :rules="nameRules"
-            :counter="10"
-            label="First name"
-            required
-          ></v-text-field>
-        </v-col>
+         <form @submit.prevent="addContact">
+        <h3>First Name</h3>
+        <div class="field">
+        <input v-model="contact.firstName" type="text" placeholder="Last name" required/>   
+  </div>
 
-        <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="lastname"
-            :rules="nameRules"
-            :counter="10"
-            label="Last name"
-            required
-          ></v-text-field>
-        </v-col>
+          <h3>Last Name</h3>
+        <div class="field">
+        <input v-model="contact.lastName" type="text" placeholder="Last name" required/>   
+  </div>
 
-        <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            label="E-mail"
-            required
-          ></v-text-field>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-form>
+          <h3>Email</h3>
+        <div class="field">
+        <input v-model="contact.email" type="email" placeholder="Last name" required/>   
+  </div>
+
+  <h3>Company</h3>
+        <div class="field">
+        <input v-model="contact.company" type="text" placeholder="Company"/>   
+  </div>
+  <v-btn class="no-decoration"><input type="submit" value="Submit"/></v-btn>
+  </form>
     </div>
+    </v-row>
+</v-container>
 </template>
 
 <script>
+
     export default {
+        data() {
+            return {
+                contact: this.newContactObject()
+            }
+        },
         methods: {
-            addContact() {
-                this.$store.dispatch('addContact', this.contact)
+          addContact() {
+            this.$store.dispatch('addContact', this.contact)
+          },
+            newContactObject() {
+                const id = Math.floor(Math.random() * 1000)
+                return {
+                    id: id,
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    company: ''
+                }
             }
         }
     }
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
+.field {
+  margin-bottom: 24px;
+}
 
+.no-decoration {
+  text-decoration: none;
+}
 </style>

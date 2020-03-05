@@ -16,7 +16,8 @@ export default new Vuex.Store({
     actions: {
         addContact({commit }, contact) {
             ContactService.postContact(contact)
-            commit('ADD_CONTACT', contact)
+                commit('ADD_CONTACT', contact)
+            }
+
         }
-    }
 })

@@ -1,35 +1,18 @@
 {
-    "contacts":
-    [
+  "contacts": [
     {
-        "id": "1",
-        "firstName": "Daniel",
-        "lastName": "Crain",
-        "email": "bluevision97@gmail.com"
+      "id": 882,
+      "firstName": "Daniel",
+      "lastName": "Crain",
+      "email": "bluevision97@gmail.com",
+      "company": "Blue Vision Development"
     },
     {
-        "id": "2",
-        "firstName": "Allie",
-        "lastName": "Crain",
-        "email": "myautumnsbreeze@gmail.com"
-    },
-    {
-        "id": "3",
-        "firstName": "Robby",
-        "lastName": "Emmert",
-        "email": "unknown@unknown.com"
-    },
-    {
-        "id": "4",
-        "firstName": "Susanna",
-        "lastName": "Holbrook",
-        "email": "unknown"
-    },
-    {
-        "id": "5",
-        "firstName": "Joshua",
-        "lastName": "Crain",
-        "email": "unknown"
+      "id": 581,
+      "firstName": "Alexandra",
+      "lastName": "Crain",
+      "email": "myautumnsbreeze@gmail.com",
+      "company": "Decal Oriented"
     }
-]
+  ]
 }
