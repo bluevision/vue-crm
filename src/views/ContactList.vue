@@ -1,29 +1,28 @@
 <template>
-<v-container>
-  <v-row>
-    <v-col v-for="category in categories" :key="category.title">
-      <h1>{{category.title}}</h1>
-    </v-col>
-  </v-row>
-
-</v-container>
-
-  
+  <div>
+    <v-card class="mx-auto" max-width="500">
+      <v-list>
+        <v-list-item-group v-model="model">
+          <v-list-item v-for="contact in contacts" :key="contact.id">
+            <v-list-item-content>
+              <v-list-item-title>{{
+                contact.firstName + " " + contact.lastName
+              }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-card>
+  </div>
 </template>
 
 <script>
-import ToDo from '../components/ToDo'
-import contacts from './contacts.json'
+import contacts from "./contacts.json";
 export default {
-data() {
-  return {
-    computed: {
-      categories() {
-        return this.$store.state.categories
-      }
-    },
-    contacts: contacts
-  }
-},
-}
+  data() {
+    return {
+      contacts: contacts,
+    };
+  },
+};
 </script>

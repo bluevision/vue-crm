@@ -1,14 +1,30 @@
 [
-    {
-        "item" : "Go Fishing",
-        "duedate" : ""
-    },
-    {
-        "item" : "Lift Weights",
-        "duedate" : ""
-    },
-    {
-        "item" : "Wash the Dishes",
-        "duedate" : ""
-    }
+  {
+    "id": "1",
+    "firstName": "Daniel",
+    "lastName": "Crain",
+    "email": "bluevision97@gmail.com",
+    "company": "BlueVision Development"
+  },
+  {
+    "id": "2",
+    "firstName": "Alexandra",
+    "lastName": "Crain",
+    "email": "myautumnsbreeze@gmail.com",
+    "company": ""
+  },
+  {
+    "id": "3",
+    "firstName": "Susanna",
+    "lastName": "Holbrook",
+    "email": "stupidface@stupidface.com",
+    "company": "Homes Refreshed"
+  },
+  {
+    "id": "4",
+    "firstName": "Robby",
+    "lastName": "Emmert",
+    "email": "robby@emmert.io",
+    "company": "Emmert Technologies"
+  }
 ]
