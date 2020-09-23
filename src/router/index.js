@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import ContactList from "../views/ContactList.vue";
+import Contact from '../views/Contact.vue';
+import ContactList from '../views/ContactList.vue'
+import AddContact from '../views/AddContact.vue';
+
 
 Vue.use(VueRouter);
 
@@ -8,7 +11,20 @@ const routes = [
   {
     path: "/",
     name: "Contacts",
-    component: ContactList
+    component: ContactList,
+
+  },
+  {
+    path: '/contact/:id',
+    name: 'Contact',
+    component: Contact,
+    props: true
+  },
+  {
+    path: '/addcontact',
+    name: 'AddContact',
+    component: AddContact,
+    props: true
   },
   {
     path: "/about",
@@ -23,7 +39,7 @@ const routes = [
     path: "/login",
     name: "login",
     component: () => import("../views/Login.vue")
-  }
+  },
 ];
 
 const router = new VueRouter({
