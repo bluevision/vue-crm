@@ -1,7 +1,7 @@
 <template>
 <v-container>
   <v-row align="center" justify="center">
-    <div>
+    <div id="Modify">
         <h1>Add a Contact</h1>
          <form @submit.prevent="addContact">
         <h3>First Name</h3>
@@ -23,7 +23,7 @@
         <div class="field">
         <input v-model="contact.company" type="text" placeholder="Company"/>   
   </div>
-  <v-btn class="no-decoration"><input type="submit" value="Submit"/></v-btn>
+  <v-btn class="no-decoration" type="submit" value="Submit">Add Contact</v-btn>
   </form>
     </div>
     </v-row>

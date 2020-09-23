@@ -16,7 +16,11 @@ export default {
     getContact(id) {
         return apiClient.get('/contacts/' + id)
     },
+    modifyContact(id) {
+        return apiClient.put('/contacts/' + id)
+    },
     postContact(contact) {
         return apiClient.post('/contacts', contact)
     }
+    //lookup json-server documentation on how to make an update
 }
